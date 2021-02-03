@@ -6,8 +6,39 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
-  <app-root></app-root>
+<body class="mat-typography">
+  
+  <h1>Datepicker ShadowDom Focus</h1>
+  <p>
+    The component is a custom element and uses ViewEncapsulation.ShadowDom.
+  </p>
+
+  <p><strong>Steps</strong></p>
+  <ol>
+    <li>Open the datepicker popup via button (or focus the input element and press alt+down)</li>
+    <li>Select a date => the popup will be closed</li>
+    <li>The focus is lost</li>
+  </ol>
+
+  <mat-demo></mat-demo>
+
+  <hr />
+
+  <p>
+    Here is the same custom element but with tabindex="-1" (focusable by JS).
+    After the calender popup is closed, the webcomponent will be focused (red border).
+  </p>
+  <mat-demo tabindex="-1"></mat-demo>
+
+  <style>
+    mat-demo:focus {
+      display: block;
+      outline: 3px solid red; 
+    }
+  </style>
 </body>
 </html>

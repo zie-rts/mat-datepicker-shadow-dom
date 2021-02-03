@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  encapsulation: ViewEncapsulation.ShadowDom,
+  styleUrls: [
+    "./../../node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+    "./../styles.css"
+  ]
 })
 export class AppComponent {
-  title = 'material-custom-element';
+  
 }
